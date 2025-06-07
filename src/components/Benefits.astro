@@ -1,0 +1,51 @@
+---
+import FreshIngredients from "./icons/fresh-ingredients.astro";
+import Handmade from "./icons/handmade.astro";
+import UniqueFlavors from "./icons/flavors.astro";
+
+const benefits = [
+  {
+    icon: FreshIngredients,
+    title: "Ingredientes frescos",
+    desc: "Usamos solo los mejores ingredientes para asegurar un sabor auténtico y natural."
+  },
+  {
+    icon: Handmade,
+    title: "Masa artesanal",
+    desc: "Nuestra masa es preparada a mano con fermentación lenta para una textura perfecta."
+  },
+  {
+    icon: UniqueFlavors,
+    title: "Sabores únicos",
+    desc: "Combinamos recetas tradicionales con un toque especial para sorprender tu paladar."
+  }
+];
+---
+<section class="mt-20 flex flex-col lg:flex-row items-center gap-12 px-8 py-16 bg-black text-white">
+  <!-- Beneficios -->  
+  <div class="w-full lg:w-1/2">
+    <h3 class="text-red-500 uppercase text-sm font-semibold tracking-wide">Algunos beneficios</h3>
+    <h2 class="text-3xl font-bold mt-2">Solo ingredientes de calidad</h2>
+    <div class="mt-6 space-y-6">
+      {benefits.map((benefit) => (
+        <div class="flex items-start gap-4">
+          <benefit.icon class="w-10 h-10 fill-red-500"/>
+          <div>
+            <h4 class="text-lg font-semibold">{benefit.title}</h4>
+            <p class="text-gray-400">{benefit.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Imagen destacada con overlay -->
+  <div class="relative w-full lg:w-1/2">
+    <img src="/calidad.jpg" alt="Promoción pizza" class="w-full rounded-lg shadow-lg object-cover">
+    <div class="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center px-6">
+      <h3 class="text-2xl font-semibold italic">Momento Pizza</h3>
+      <p class="text-sm mt-1">Cada 6 pizzas, la siguiente es gratis</p>
+      <a href="#menu" class="mt-4 px-6 py-3 bg-red-500 text-white uppercase text-sm tracking-wide rounded-lg hover:bg-white hover:text-black transition">Obtener promoción</a>
+    </div>
+  </div>
+</section>

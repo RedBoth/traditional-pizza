@@ -1,0 +1,19 @@
+---
+const pizzas = [
+  { img : '/margherita.jpg', name : "Pizza Margherita", desc : "Tomate, mozzarella y albahaca fresca." },
+  { img : '/pepperoni.webp', name : "Pizza Pepperoni", desc : "Extra queso y pepperoni crujiente." },
+  { img : '/vegetariana.jpeg', name : "Pizza Vegetariana", desc : "Pimientos, champiñones y aceitunas." }
+];
+---
+<section class="relative -mt-16 z-10 flex px-4 sm:px-6">
+  <div class="grid gap-6 sm:gap-8 sm:grid-cols-3 max-w-6xl mx-auto">
+    {pizzas.map((pizza) => (
+      <div class="bg-black/85 text-white border border-gray-900 p-6 text-center shadow-lg rounded-xl">
+        <img src={pizza.img} alt={pizza.name} class="mx-auto w-36 h-36 sm:w-48 sm:h-48 object-cover rounded-lg">
+        <h3 class="mt-4 text-lg font-bold">{pizza.name}</h3>
+        <p class="text-sm text-gray-400">{pizza.desc}</p>
+        <a href="#menu" class="mt-4 inline-block px-4 py-2  text-red-500 font-semibold border border-red-500 rounded hover:bg-red-500 hover:text-white transition">Descubre más</a>
+      </div>
+    ))}
+  </div>
+</section>

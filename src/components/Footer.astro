@@ -1,0 +1,45 @@
+---
+import logo from "../assets/traditional.svg";
+import { Image } from "astro:assets";
+import Twitter from "./icons/twitter.astro";
+import Facebook from "./icons/facebook.astro";
+import Instagram from "./icons/instagram.astro";
+import Linkedin from "./icons/linkedin.astro";
+import Location from "./icons/location.astro";
+import Phone from "./icons/phone.astro";
+import Email from "./icons/mail.astro";
+---
+
+<footer class="py-10">
+  <div class="container mx-auto px-6 md:px-12">
+    <div class="flex flex-col md:flex-row justify-between items-center md:items-start gap-8">
+      <!-- Contacto -->
+      <div class="text-center md:text-left">
+        <h3 class="text-lg font-semibold">Contacto</h3>
+        <p class="mt-4 flex items-center gap-2"><Location class="w-6 h-6 fill-white"/>Avenida San Martin 2015</p>
+        <p class="mt-4 flex items-center gap-2"><Phone class="w-6 h-6 fill-white"/>+54 123456</p>
+        <p class="mt-4 flex items-center gap-2"><Email class="w-6 h-6 fill-white"/>traditional@pizza.com</p>
+      </div>
+      <!-- Logo y redes sociales -->
+      <div class="text-center">
+        <div class="relative">
+          <Image src={logo} alt="logo" class="mx-auto"/>
+        </div>
+        <p class="italic mt-4">Whisper to us about your feelings, and we will prepare what you need now</p>
+        <div class="flex justify-center mt-4 space-x-4">
+          <a href=""><Twitter class="w-6 h-6 fill-white hover:fill-gray-400"/></a>
+          <a href=""><Facebook class="w-6 h-6 fill-white hover:fill-gray-400"/></a>
+          <a href=""><Instagram class="w-6 h-6 fill-white hover:fill-gray-400"/></a>
+          <a href=""><Linkedin class="w-6 h-6 fill-white hover:fill-gray-400"/></a>
+        </div>
+      </div>
+      <!-- Horarios -->
+      <div class="text-center md:text-right">
+        <h3 class="text-lg font-semibold">Horarios</h3>
+        <p class="mt-4"><span class="text-red-500">Lun - Vie:</span> 7:00am - 6:00pm</p>
+        <p class="mt-4"><span class="text-red-500">Sáb:</span> 7:00am - 6:00pm</p>
+        <p class="mt-4"><span class="text-red-500">Dom:</span> 8:00am - 6:00pm</p>
+      </div>
+    </div>
+  </div>
+</footer>

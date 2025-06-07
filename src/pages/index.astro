@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SectionContainer from '../components/SectionContainer.astro';
+import Hero from '../components/Hero.astro';
+import FeaturedPizzas from '../components/FeaturedPizzas.jsx'
+import Benefits from '../components/Benefits.astro';
+import Menu from '../components/Menu.astro';
+import Testimonies from '../components/Testimonies.astro'
+---
+
+<Layout title="Traditional Pizza" description='Una masa artesanal junto a las recetas de siempre'>
+	<main>
+		<Hero />
+		<FeaturedPizzas client:load />
+		<Benefits />
+		<Menu />
+		<Testimonies />
+	</main>	
+</Layout>

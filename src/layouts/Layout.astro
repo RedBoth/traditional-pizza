@@ -1,0 +1,49 @@
+---
+import '@fontsource/poppins';
+import NavbarIsland from '../components/NavbarIsland.jsx'
+import Footer from '../components/Footer.astro';
+import './src/styles/global.css'
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Traditional Pizza</title>
+		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+	</head>
+	<body>
+		<NavbarIsland client:load />
+		<slot />
+		<Footer />
+	</body>
+</html>
+
+<style>
+	:root {
+		color-scheme: light dark;
+	}
+	html{
+		font-family: 'Poppins', sans-serif;
+		scroll-behavior: smooth;
+	}
+	body {
+		background: #111111;
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+	}
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>
