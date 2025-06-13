@@ -16,8 +16,9 @@ const { title, description } = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content={description}>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>Traditional Pizza</title>
+		<title>{title}</title>
 		<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 	</head>
 	<body>

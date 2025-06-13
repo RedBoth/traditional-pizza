@@ -1,58 +1,44 @@
----
-const menuItems = [
+export const menuItems = [
   {
     nombre: "Margherita",
     descripcion: "Salsa de tomate, mozzarella fresca, albahaca y aceite de oliva.",
     precio: 1800,
     imagen: "/menu/margherita.webp",
+    categoria: "Pizzas Clásicas"
   },
   {
     nombre: "Pepperoni",
     descripcion: "Queso mozzarella, pepperoni crujiente y salsa casera.",
     precio: 2000,
     imagen: "/menu/pepperoni.webp",
+    categoria: "Pizzas Clásicas"
   },
   {
     nombre: "Cuatro Quesos",
     descripcion: "Mozzarella, parmesano, gorgonzola y queso de cabra.",
     precio: 2100,
     imagen: "/menu/4quesos.webp",
+    categoria: "Pizzas Especiales"
   },
   {
     nombre: "Fugazzeta",
     descripcion: "Cebolla caramelizada, queso mozzarella, orégano y oliva.",
     precio: 1900,
     imagen: "/menu/fugazzeta.webp",
+    categoria: "Pizzas Especiales"
   },
   {
     nombre: "Napolitana",
     descripcion: "Mozzarella, rodajas de tomate, ajo y orégano.",
     precio: 1850,
     imagen: "/menu/napolitana.webp",
+    categoria: "Pizzas Clásicas"
   },
   {
     nombre: "Especial de la Casa",
     descripcion: "Masa madre, jamón cocido, morrones asados, huevo y aceitunas.",
     precio: 2200,
     imagen: "/menu/especial.webp",
-  },
+    categoria: "Pizzas Especiales"
+  }
 ];
----
-
-<section class="py-16 px-4 md:px-12">
-  <h2 class="text-3xl md:text-4xl font-bold text-center mb-10">Nuestro Menú</h2>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-    {menuItems.map((item) => (
-      <div class="bg-black/85 border border-gray-600 rounded-2xl shadow-md p-6 hover:scale-[1.02] hover:border-red-500 transition-transform">
-        <img src={item.imagen} alt={`Pizza ${item.nombre}`} class="w-full h-48 object-cover rounded-xl mb-4" />
-        <h3 class="text-xl font-semibold mb-2">{item.nombre}</h3>
-        <p class="text-gray-400 mb-3">{item.descripcion}</p>
-        <span class="text-red-500 font-bold text-lg">${item.precio}</span>
-      </div>
-    ))}
-  </div>
-  <a href="/menu-completo" class="mt-8 block text-lg text-center text-red-500 hover:font-bold">
-    Ver menú completo →
-  </a>
-</section>
