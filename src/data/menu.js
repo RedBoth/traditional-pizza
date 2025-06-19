@@ -40,5 +40,68 @@ export const menuItems = [
     precio: 2200,
     imagen: "/menu/especial.webp",
     categoria: "Pizzas Especiales"
+  },
+  {
+    nombre: "Carne suave",
+    descripcion: "Masa casera, carne de ternera cortada a cuchillo sin picantes",
+    precio: 2250,
+    imagen: "/menu/empanadas-carne-suave.webp",
+    categoria: "Empanadas"
+  },
+  {
+    nombre: "Carne picante",
+    descripcion: "Masa casera, carne de ternera cortada a cuchillo y finamente condimentada",
+    precio: 2350,
+    imagen: "/menu/empanadas-carne-suave.webp",
+    categoria: "Empanadas"
+  },
+  {
+    nombre: "JyQ",
+    descripcion: "Masa casera, jamon cocido de alta calidad y un queso cremoso tradicional",
+    precio: 2100,
+    imagen: "/menu/empanadas-jyq.webp",
+    categoria: "Empanadas"
+  },
+  {
+    nombre: "Calabresa",
+    descripcion: "Masa casera, queso mozzarella y longaniza",
+    precio: 2400,
+    imagen: "/menu/especial.webp",
+    categoria: "Empanadas"
+  },
+  {
+    nombre: "Coca Cola",
+    descripcion: "Coca Cola de 500ml",
+    precio: 450,
+    imagen: "/menu/cocacola-original-500.webp",
+    categoria: "Bebidas"
+  },
+  {
+    nombre: "Sprite",
+    descripcion: "Sprite de 500ml",
+    precio: 450,
+    imagen: "/menu/sprite-original-500.webp",
+    categoria: "Bebidas"
+  },
+  {
+    nombre: "Fanta",
+    descripcion: "Fanta de 500ml",
+    precio: 450,
+    imagen: "/menu/fanta-original-500.webp",
+    categoria: "Bebidas"
+  },
+  {
+    nombre: "Brahma",
+    descripcion: "Cerveza Brahma de 1lt",
+    precio: 900,
+    imagen: "/menu/brahma-rubia-1lt.webp",
+    categoria: "Bebidas"
+  },
+  {
+    nombre: "Heineken",
+    descripcion: "Cerveza Heineken de 1lt",
+    precio: 1200,
+    imagen: "/menu/heineken-rubia-1lt.webp",
+    categoria: "Bebidas"
   }
 ];
