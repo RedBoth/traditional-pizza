@@ -66,7 +66,7 @@ export const menuItems = [
     nombre: "Calabresa",
     descripcion: "Masa casera, queso mozzarella y longaniza",
     precio: 2400,
-    imagen: "/menu/especial.webp",
+    imagen: "/menu/empanadas-calabresa.webp",
     categoria: "Empanadas"
   },
   {

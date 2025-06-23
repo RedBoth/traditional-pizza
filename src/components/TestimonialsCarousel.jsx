@@ -14,14 +14,14 @@ export default function TestimonialsCarousel() {
   };
 
   return (
-    <section id="reseñas" className="py-16 px-4 max-w-6xl mx-auto">
+    <section id="reseñas" className="py-16 px-4 max-w-7xl mx-auto">
       <div className="flex items-center justify-between mb-6 px-4 md:px-0">
         <h2 className="text-4xl font-bold text-white">Reseñas</h2>
         <div className="flex gap-4">
-          <button onClick={scrollLeft} className="font-bold bg-neutral-800 hover:bg-red-500 text-white p-2 px-6 rounded-full cursor-pointer">
+          <button onClick={scrollLeft} aria-label="Reseña anterior" className="font-bold bg-neutral-800 hover:bg-red-500 text-white p-2 px-6 rounded-full cursor-pointer">
             <ArrowLeft width={24} strokeWidth={2} />
           </button>
-          <button onClick={scrollRight} className="font-bold bg-neutral-800 hover:bg-red-500 text-white p-2 px-6 rounded-full cursor-pointer">
+          <button onClick={scrollRight} aria-label="Siguiente reseña" className="font-bold bg-neutral-800 hover:bg-red-500 text-white p-2 px-6 rounded-full cursor-pointer">
             <ArrowRight width={24} strokeWidth={2} />
           </button>
         </div>

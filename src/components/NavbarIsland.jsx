@@ -6,7 +6,7 @@ export default function NavbarIsland() {
   return (
     <header className="flex justify-between items-center py-3 w-full mx-auto px-4 md:px-10 relative bg-black">
       {/* Logo */}
-      <a href="/" className="w-48 md:w-60">
+      <a href="/" className="w-48 md:w-60" aria-label="Logo de la empresa">
         <img src="/traditional.svg" alt="logo" />
       </a>
 

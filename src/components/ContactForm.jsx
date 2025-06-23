@@ -1,18 +1,65 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TwitterIcon from "./icons/twitter.jsx";
 import FacebookIcon from "./icons/facebook.jsx";
 import InstagramIcon from "./icons/instagram.jsx";
+import LinkedinIcon from "./icons/linkedin.jsx";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ nombre: "", email: "", mensaje: "" });
+  const [errors, setErrors] = useState({});
+  const [isValid, setIsValid] = useState(false);
+  const [touched, setTouched] = useState({
+    nombre : false,
+    email: false,
+    mensaje: false,
+  });
+
+  // Validamos cada vez que el formulario cambia
+  useEffect(() => {
+    const validationErrors = validate();
+    setErrors(validationErrors);
+    setIsValid(Object.keys(validationErrors).length === 0)
+  }, [form]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleBlur = (e) => {
+    const { name } = e.target;
+    setTouched(prev => ({ ...prev, [name]: true}));
+  };
+
+  const validate = () => {
+    let newErrors = {};
+
+    if(!form.nombre.trim()) {
+      newErrors.nombre = "El nombre es obligatorio.";
+    } else if (form.nombre.trim().length < 2) {
+      newErrors.nombre = "El nombre debe tener al menos 2 caracteres.";
+    }
+
+    if(!form.email.trim()) {
+      newErrors.email = "El correo es obligatorio.";
+    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
+      newErrors.email = "El correo no es valido.";
+    }
+
+    if(!form.mensaje.trim()) {
+      newErrors.mensaje = "El mensaje es obligatorio.";
+    } else if (form.mensaje.trim().length < 10) {
+      newErrors.mensaje = "El mensaje debe tener al menos 10 caracteres.";
+    }
+
+    return newErrors;
+  };
+
   const handleSumbit = (e) => {
     e.preventDefault();
+    
+    if(!isValid) return;
+
     console.log("Mensaje enviado:", form);
     //Aca se conectaria a Formspree, EmailJS u otro
     alert("Gracias por contactarte. Te responderemos pronto.");
@@ -40,6 +87,7 @@ export default function ContactForm() {
               <a href="#" ><InstagramIcon className="w-6 h-6 fill-white hover:fill-red-500"/></a>
               <a href="#" ><FacebookIcon className="w-6 h-6 fill-white hover:fill-red-500"/></a>
               <a href="#" ><TwitterIcon className="w-6 h-6 fill-white hover:fill-red-500"/></a>
+              <a href="#"><LinkedinIcon className="w-6 h-6 fill-white hover:fill-red-500"/></a>
             </div>
           </div>
           <div>
@@ -50,10 +98,19 @@ export default function ContactForm() {
 
         {/* Fromulario */}
         <form onSubmit={handleSumbit} className="md:w-1/2 bg-[#111111] p-6 rounded-lg flex flex-col gap-4">
-          <input type="text" name="nombre" value={form.nombre} onChange={handleChange} placeholder="Tu nombre" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"/>
-          <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Tu email" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500"/>
-          <textarea name="mensaje" value={form.mensaje} onChange={handleChange} placeholder="Tu mensaje" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-red-500"/>
-          <button type="submit" className="mt-2 bg-red-500 hover:bg-red-600 text-white font-bold py-3 rounded transition">
+          <div>
+            <input type="text" name="nombre" value={form.nombre} onChange={handleChange} onBlur={handleBlur} placeholder="Tu nombre" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 w-full"/>
+            {touched.nombre && errors.nombre && <p className="text-red-500 text-sm mt-1">{errors.nombre}</p>}
+          </div>
+          <div>
+            <input type="email" name="email" value={form.email} onChange={handleChange} onBlur={handleBlur} placeholder="Tu email" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 w-full"/>
+            {touched.email && errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+          </div>
+          <div>
+            <textarea name="mensaje" value={form.mensaje} onChange={handleChange} onBlur={handleBlur} placeholder="Tu mensaje" required className="p-3 bg-neutral-800 border border-neutral-700 rounded text-white placeholder-gray-400 h-32 resize-none focus:outline-none focus:ring-2 focus:ring-red-500 w-full"/>
+            {touched.mensaje && errors.mensaje && <p className="text-red-500 text-sm mt-1">{errors.mensaje}</p>}
+          </div>
+          <button type="submit" disabled={!isValid} className={`mt-2 font-bold py-3 rounded transition ${isValid ? 'bg-red-500 hover:bg-red-900 text-white cursor-pointer' : 'bg-gray-600 cursor-not-allowed text-gray-300'}`}>
             Enviar mensaje
           </button>
         </form>
