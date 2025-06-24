@@ -92,7 +92,7 @@ export default function ContactForm() {
           </div>
           <div>
             <p className="text-red-500 font-semibold mb-1">Ubicación</p>
-            <iframe src="https://www.google.com/maps/embed?pb=..." className="w-full h-48 rounded border-none" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=..." className="w-3/4 h-48 rounded border-none" loading="lazy"></iframe>
           </div>
         </div>
 

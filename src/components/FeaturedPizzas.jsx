@@ -31,7 +31,7 @@ export default function FeaturedPizzas() {
             <h3 className="mt-4 text-lg md:text-xl font-bold">{pizza.name}</h3>
             <p className="text-sm md:text-lg text-gray-400">{pizza.desc}</p>
             <a
-              href="#menu"
+              href="/menu"
               className="mt-4 inline-block px-4 py-2 md:px-6 md:py-4 text-red-500 font-semibold border border-red-500 rounded hover:bg-red-500 hover:text-white transition"
             >
               Descubre más

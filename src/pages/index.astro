@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import FeaturedPizzas from '../components/FeaturedPizzas.jsx'
 import Benefits from '../components/Benefits.astro';
-import MenuSection from '../components/MenuSection.astro';
+import MenuPreview from '../components/MenuPreview.jsx';
 import TestimonialsCarousel from '../components/TestimonialsCarousel.jsx';
 ---
 
@@ -12,7 +12,7 @@ import TestimonialsCarousel from '../components/TestimonialsCarousel.jsx';
 		<Hero />
 		<FeaturedPizzas client:load />
 		<Benefits />
-		<MenuSection />
+		<MenuPreview client:visible/>
 		<TestimonialsCarousel client:visible />
 	</main>	
 </Layout>
