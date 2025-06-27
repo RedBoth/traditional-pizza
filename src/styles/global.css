@@ -6,3 +6,87 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+/* Contenedor del calendario */
+.react-datepicker {
+    background-color: #404040 !important; /* Fondo principal de la web */
+    border: 1px solid #262626 !important; /* Borde gris oscuro */
+    border-radius: 16px !important; /* Bordes suaves como usás en los botones */
+    padding: 1rem !important;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+/* Header del calendario */
+.react-datepicker__header {
+    background-color: #404040 !important;
+    border-bottom: 1px solid #111 !important; /* Un poco más claro que el fondo */
+    color: white !important;
+    border-top-left-radius: 16px !important;
+    border-top-right-radius: 16px !important;
+    position: relative !important;
+}
+
+/* Título del mes */
+.react-datepicker__current-month {
+    color: white !important;
+    font-size: 1.4rem !important;
+    font-weight: bold !important;
+}
+
+/* Flechas */
+.react-datepicker__navigation--previous,
+.react-datepicker__navigation--next {
+    top: 22px !important; /* Baja la flecha */
+    border: none !important;
+    background-color: transparent !important;
+    width: 60px !important;
+    height: 50px !important;
+}
+
+/* Ícono de la flecha */
+.react-datepicker__navigation-icon::before {
+    border-color: white !important; /* Cambia color de la flecha */
+    border-width: 2px 2px 0 0 !important;
+}
+
+/* Días individuales */
+.react-datepicker__day {
+    color: white !important;
+    font-weight: 500 !important;
+    border-radius: 8px !important;
+    margin: 0.3rem !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Estilo para los nombres de los días (Lu, Ma, Mi, etc.) */
+.react-datepicker__day-name {
+    color: white !important; /* Cambia el color del texto */
+    font-weight: 500 !important;
+    margin: 0.3rem !important;
+    font-size: 1rem !important;
+}
+
+/* Día seleccionado */
+.react-datepicker__day--selected {
+    background-color: #ef4444 !important; /* Rojo como tus botones */
+    color: white !important;
+}
+
+/* Día al pasar el mouse */
+.react-datepicker__day:hover {
+    background-color: #333333 !important; /* Hover gris oscuro */
+    color: white !important;
+}
+
+/* Día actual */
+.react-datepicker__day--today {
+    border: 1px solid #dbc7c7 !important; /* Bordecito rojo en el día actual */
+    font-weight: bold !important;
+}
+
+/* Días deshabilitados */
+.react-datepicker__day--disabled {
+    color: #666 !important;
+    cursor: not-allowed !important;
+    opacity: 0.5 !important;
+}

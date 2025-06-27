@@ -26,7 +26,7 @@ export default function NavbarIsland() {
       <nav className={`absolute top-full left-0 w-full bg-black text-white flex flex-col items-center gap-4 py-4 px-6 opacity-95 md:hidden z-50 transition-all duration-300 ${menuOpen ? 'block' : 'hidden'}`}>
         <a href="/" className="hover:text-red-500">Inicio</a>
         <a href="/menu" className="hover:text-red-500">Menu</a>
-        <a href="#" className="hover:text-red-500">Reservación</a>
+        <a href="/reservation" className="hover:text-red-500">Reservación</a>
         <a href="/#reseñas" className="hover:text-red-500">Reseñas</a>
         <a href="/contact" className="hover:text-red-500">Contacto</a>
       </nav>
@@ -35,7 +35,7 @@ export default function NavbarIsland() {
       <nav className="hidden md:flex flex-row gap-x-10 opacity-80 text-lg">
         <a href="/" className="hover:text-red-500">Inicio</a>
         <a href="/menu" className="hover:text-red-500">Menu</a>
-        <a href="#" className="hover:text-red-500">Reservación</a>
+        <a href="/reservation" className="hover:text-red-500">Reservación</a>
         <a href="/#reseñas" className="hover:text-red-500">Reseñas</a>
         <a href="/contact" className="hover:text-red-500">Contacto</a>
       </nav>

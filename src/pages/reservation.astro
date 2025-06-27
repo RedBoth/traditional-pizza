@@ -1,0 +1,8 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ReservationCalendar from "../components/ReservationCalendar";
+---
+
+<Layout title="Reservas | Traditional Pizzas" description="Aca podes reservar tu mesa en los diferentes horarios disponibles">
+    <ReservationCalendar client:only="react" />
+</Layout>
