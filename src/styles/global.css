@@ -1,4 +1,15 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --primary: 107 112 92;      /* Verde Oliva */
+    --secondary: 255 232 214;   /* Beige/Dorado claro */
+    --accent: 203 153 126;      /* Dorado suave */
+    --background: 17 17 17;     /* Oscuro */
+    --text: 255 255 255;        /* Blanco */
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

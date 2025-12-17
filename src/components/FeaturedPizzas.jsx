@@ -19,7 +19,7 @@ export default function FeaturedPizzas() {
         {pizzas.map((pizza, i) => (
           <div
             key={pizza.name}
-            className="bg-black/85 text-white border border-gray-900 p-6 text-center shadow-lg rounded-xl"
+            className="bg-black/80 text-white border border-gray-900 p-6 text-center shadow-lg rounded-xl"
             data-aos="fade-up"
             data-aos-delay={i * 100}
           >
